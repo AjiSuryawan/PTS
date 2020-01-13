@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Register"
+        android:textSize="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:textColorHint="@color/ungu"
+        />
+    <EditText
+        android:id="@+id/user"
+        android:layout_marginTop="30dp"
+        android:layout_width="368dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/line"
+        android:hint="Username"
+        android:textColorHint="@color/hitam"
+        android:gravity="center"
+        />
+    <EditText
+        android:id="@+id/password"
+        android:layout_marginTop="20dp"
+        android:layout_width="368dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/line"
+        android:hint="Password"
+        android:textColorHint="@color/hitam"
+        android:gravity="center"
+        android:inputType="textPassword"/>
+    <EditText
+        android:id="@+id/confrimpassword"
+        android:layout_marginTop="20dp"
+        android:layout_width="368dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/line"
+        android:hint="Password"
+        android:textColorHint="@color/hitam"
+        android:gravity="center"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:layout_width="368dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/line2"
+        android:hint="Register"
+        android:gravity="center"
+        android:textColorHint="@color/colorAccent"
+        android:id="@+id/Register"/>
+
+</LinearLayout>
