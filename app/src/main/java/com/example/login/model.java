@@ -1,34 +1,36 @@
 package com.example.login;
 
 public class model {
+    private String id;
     private String nama;
-    private String nism;
-    private String noKK;
+    private String alamat;
+    private String No_hp;
+    private String pesanan;
 
-    public model(String nama, String nism, String noKK){
+    public model(String id, String nama, String alamat, String no_hp, String pesanan) {
+        this.id = id;
         this.nama = nama;
-        this.nism = nism;
-        this.noKK = noKK;
+        this.alamat = alamat;
+        this.No_hp = no_hp;
+        this.pesanan = pesanan;
     }
 
-    public String getName(){
+    public String getId() {
+        return id;
+    }
+    public String getNama() {
         return nama;
     }
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-    public String getNisn(){
-        return nism;
-    }
-    public void setNism(String nism) {
-        this.nism = nism;
-    }
-    public String getNoKK(){
 
-        return noKK;
+    public String getAlamat() {
+        return alamat;
     }
-    public void setnokk(String noKK) {
 
-        this.noKK = noKK;
+    public String getNo_hp() {
+        return No_hp;
+    }
+
+    public String getPesanan() {
+        return pesanan;
     }
 }
