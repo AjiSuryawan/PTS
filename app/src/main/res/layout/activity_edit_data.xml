@@ -14,27 +14,33 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ID"/>
+        android:text="ID"
+        android:id="@+id/id"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="NAMA"/>
+        android:hint="NAMA"
+        android:id="@+id/nama"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="PESANAN"
+        android:id="@+id/pesanan"
         />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="NO-HP"/>
+        android:hint="NO-HP"
+        android:id="@+id/no_hp"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="ALAMAt"/>
+        android:hint="ALAMAt"
+        android:id="@+id/alamat"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="CLICK TO EDIT"/>
+        android:hint="CLICK TO EDIT"
+        android:id="@+id/btn_edit"/>
 
 </LinearLayout>
