@@ -34,7 +34,8 @@ public class List extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         recyclerView = (RecyclerView) findViewById(R.id.list);
-        addData();
+     //   addData();
+        getDataFromRemote();
     }
 
     void addData() {
@@ -52,7 +53,7 @@ public class List extends AppCompatActivity {
 
         //get data online
 
-        getDataFromRemote();
+
     }
 
     private void getDataFromRemote() {
@@ -94,6 +95,11 @@ public class List extends AppCompatActivity {
                                     in.putExtra("no-hp", mahasiswaArrayList.get(position).getNo_hp());
                                     in.putExtra("alamat", mahasiswaArrayList.get(position).getAlamat());
                                     startActivityForResult(in, 23);
+                                }
+
+                                @Override
+                                public void test() {
+
                                 }
                             });
                             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(List.this);

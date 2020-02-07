@@ -17,6 +17,12 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
     private Callback callback;
 
 
+    interface Callback {
+        void onClick(int position);
+        void test();
+    }
+
+
     public MahasiswaAdapter(ArrayList<model> dataList, Callback callback) {
         this.callback = callback;
         this.dataList = dataList;
@@ -76,7 +82,4 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
         }
     }
 
-    interface Callback {
-        void onClick(int position);
-    }
 }

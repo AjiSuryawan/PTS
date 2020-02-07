@@ -15,32 +15,53 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ID"
-        android:id="@+id/id"/>
+        android:id="@+id/id"
+        />
+
     <EditText
+        android:id="@+id/nama"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
+        android:background="@drawable/line"
         android:hint="NAMA"
-        android:id="@+id/nama"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="PESANAN"
-        android:id="@+id/pesanan"
+        android:padding="15dp"
         />
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="NO-HP"
-        android:id="@+id/no_hp"/>
+        android:layout_height="55dp"
+        android:hint="PESANAN"
+        android:id="@+id/pesanan"
+        android:background="@drawable/line"
+        android:padding="15dp"
+        android:layout_marginTop="8dp"
+        />
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
+        android:hint="NO-HP"
+        android:id="@+id/no_hp"
+        android:background="@drawable/line"
+        android:padding="15dp"
+        android:layout_marginTop="8dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
         android:hint="ALAMAt"
-        android:id="@+id/alamat"/>
+        android:id="@+id/alamat"
+        android:background="@drawable/line"
+        android:padding="15dp"
+        android:layout_marginTop="8dp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="CLICK TO EDIT"
-        android:id="@+id/btn_edit"/>
+        android:id="@+id/btn_edit"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CLICK TO EDIT"
+        android:id="@+id/btn_hapus"
+        android:layout_marginTop="20dp"/>
 
 </LinearLayout>
