@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
@@ -28,12 +30,22 @@ public class List extends AppCompatActivity {
     private RecyclerView recyclerView;
     private MahasiswaAdapter adapter;
     private ArrayList<model> mahasiswaArrayList;
+    private ImageView tambah_data;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         recyclerView = (RecyclerView) findViewById(R.id.list);
+        tambah_data = (findViewById(R.id.tambah_data));
+        tambah_data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent (List.this, tambah_data.class);
+                startActivityForResult(myIntent, 23);
+            }
+        });
      //   addData();
         getDataFromRemote();
     }
@@ -127,5 +139,6 @@ public class List extends AppCompatActivity {
 
         }
     }
+
 }
 

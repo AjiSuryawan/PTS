@@ -3,6 +3,8 @@ package com.example.login;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,6 +29,8 @@ public class EditData extends AppCompatActivity {
     private EditText txt_no_hp;
     private EditText txt_alamat;
     private Button btn_edit;
+    private Button btn_hapus;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,63 @@ public class EditData extends AppCompatActivity {
         txt_no_hp = findViewById(R.id.no_hp);
         txt_alamat = findViewById(R.id.alamat);
         btn_edit = findViewById(R.id.btn_edit);
+        btn_hapus = findViewById(R.id.btn_hapus);
+        btn_hapus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which){
+                            case DialogInterface.BUTTON_POSITIVE:
+                                //Yes button clicked
+                                AndroidNetworking.post(BaseURL.url + "delete.php")
+                                        .addBodyParameter("id", txt_id.getText().toString())
+                                        .setPriority(Priority.LOW)
+                                        .build()
+                                        .getAsJSONObject(new JSONObjectRequestListener() {
+                                            @Override
+                                            public void onResponse(JSONObject response) {
+                                                Log.e("", response.toString());
+                                                try {
+                                                    JSONObject hasil = response.getJSONObject("hasil");
+                                                    boolean sukses = hasil.getBoolean("respon");
+                                                    if (sukses) {
+                                                        Intent returnIntent = new Intent();
+                                                        returnIntent.putExtra("refresh", "refresh");
+                                                        setResult(23, returnIntent);
+                                                        finish();
+                                                        Toast.makeText(EditData.this, "Delete Suskses", Toast.LENGTH_SHORT).show();
+                                                    } else {
+                                                        Toast.makeText(EditData.this, "Delete gagal", Toast.LENGTH_SHORT).show();
+                                                    }
+                                                } catch (JSONException e) {
+                                                    e.printStackTrace();
+                                                    System.out.println("ttttt" + e.getMessage());
+                                                    Toast.makeText(EditData.this, "Delete gagal", Toast.LENGTH_SHORT).show();
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onError(ANError anError) {
+
+                                            }
+                                        });
+                                break;
+
+                            case DialogInterface.BUTTON_NEGATIVE:
+                                //No button clicked
+                                break;
+                        }
+                    }
+                };
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(EditData.this, R.style.Theme_AppCompat_Light_Dialog_Alert);
+                builder.setMessage("Are you sure?").setPositiveButton("Yes", dialogClickListener)
+                        .setNegativeButton("No", dialogClickListener).show();
+            }
+        });
+
 
         txt_id.setText(id);
         txt_nama.setText(nama);

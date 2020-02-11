@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".EditData"></activity>
+        <activity android:name=".tambah_data"></activity>
+        <activity android:name=".EditData" />
         <activity android:name=".pengaturan" />
         <activity android:name=".Akun" />
         <activity android:name=".List" />
