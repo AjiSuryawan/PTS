@@ -7,9 +7,18 @@
     tools:context=".tambah_data"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/nama"
+    <TextView
+        android:gravity="center"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CREAT DATA"
+        android:textSize="20dp"
+        />
+
+    <EditText
+        android:layout_gravity="center"
+        android:id="@+id/nama"
+        android:layout_width="396dp"
         android:layout_height="55dp"
         android:background="@drawable/line"
         android:hint="NAMA"
@@ -17,7 +26,8 @@
         android:layout_marginTop="8dp"
         />
     <EditText
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="396dp"
         android:layout_height="55dp"
         android:hint="PESANAN"
         android:id="@+id/pesanan"
@@ -26,7 +36,8 @@
         android:layout_marginTop="8dp"
         />
     <EditText
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="396dp"
         android:layout_height="55dp"
         android:hint="NO-HP"
         android:id="@+id/no_hp"
@@ -34,19 +45,22 @@
         android:padding="15dp"
         android:layout_marginTop="8dp"/>
     <EditText
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="396dp"
         android:layout_height="55dp"
-        android:hint="ALAMAt"
+        android:hint="ALAMAT"
         android:id="@+id/alamat"
         android:background="@drawable/line"
         android:padding="15dp"
         android:layout_marginTop="8dp"/>
+
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="NEW DATA"
-        android:textColorHint="@color/colorAccent"
+        android:layout_gravity="center"
         android:id="@+id/btn_tambah"
+        android:layout_width="349dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@color/blue"/>
+        android:background="@drawable/line2"
+        android:hint="NEW DATA"
+        android:textColorHint="@color/colorAccent" />
 </LinearLayout>

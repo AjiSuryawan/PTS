@@ -10,24 +10,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Edit Data"/>
+        android:text="Edit Data"
+        android:textSize="25dp"
+        android:textStyle="bold"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
         android:text="ID"
         android:id="@+id/id"
         />
 
     <EditText
+        android:layout_gravity="center"
         android:id="@+id/nama"
-        android:layout_width="match_parent"
+        android:layout_width="396dp"
         android:layout_height="55dp"
         android:background="@drawable/line"
         android:hint="NAMA"
-        android:padding="15dp"
-        />
+        android:padding="15dp" />
     <EditText
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="396dp"
         android:layout_height="55dp"
         android:hint="PESANAN"
         android:id="@+id/pesanan"
@@ -36,7 +41,8 @@
         android:layout_marginTop="8dp"
         />
     <EditText
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="396dp"
         android:layout_height="55dp"
         android:hint="NO-HP"
         android:id="@+id/no_hp"
@@ -44,27 +50,32 @@
         android:padding="15dp"
         android:layout_marginTop="8dp"/>
     <EditText
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="396dp"
         android:layout_height="55dp"
-        android:hint="ALAMAt"
+        android:hint="ALAMAT"
         android:id="@+id/alamat"
         android:background="@drawable/line"
         android:padding="15dp"
         android:layout_marginTop="8dp"/>
+
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="CLICK TO EDIT"
+        android:layout_gravity="center"
         android:id="@+id/btn_edit"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@color/kuning"/>
+        android:background="@drawable/line_warning"
+        android:hint="CLICK TO EDIT"
+        android:textColorHint="@color/colorAccent" />
     <Button
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="368dp"
         android:layout_height="wrap_content"
         android:hint="DELETE"
         android:textColorHint="@color/colorAccent"
         android:id="@+id/btn_hapus"
         android:layout_marginTop="20dp"
-        android:background="@color/merah"/>
+        android:background="@drawable/line_danger"/>
 
 </LinearLayout>

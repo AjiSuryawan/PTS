@@ -3,6 +3,7 @@ package com.example.login;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -32,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        final SharedPreferences sharedPreferences = getSharedPreferences("wahyu", MODE_PRIVATE);
+        if(sharedPreferences.getBoolean("udah_login", false)){
+            Intent intent = new Intent(MainActivity.this, Menu_Utama.class);
+            startActivity(intent);
+            finish();
+            return;
+        }
         setContentView(R.layout.activity_main);
         etEmail = findViewById(R.id.user);
         etPassword = findViewById(R.id.password);
@@ -81,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                                    boolean sukses = hasil.getBoolean("sukses");
                                    Log.d("sukses", "onResponse: "+hasil.getBoolean("sukses"));
                                    if (sukses){
+                                       sharedPreferences.edit().putBoolean("udah_login", true).apply();
                                        Toast.makeText(MainActivity.this, "Login Suskses", Toast.LENGTH_SHORT).show();
                                        Intent myIntent = new Intent(MainActivity.this, Menu_Utama.class);
                                        startActivity(myIntent);
