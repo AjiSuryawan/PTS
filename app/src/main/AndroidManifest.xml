@@ -15,15 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".webview"></activity>
         <activity android:name=".tambah_data" />
         <activity android:name=".EditData" />
-        <activity android:name=".pengaturan" />
-        <activity android:name=".Akun" />
-        <activity android:name=".List" />
-        <activity android:name=".Menu_Utama" />
-        <activity android:name=".Register" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".List" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

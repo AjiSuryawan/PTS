@@ -46,22 +46,32 @@ public class List extends AppCompatActivity {
                 startActivityForResult(myIntent, 23);
             }
         });
-     //   addData();
+       // addData();
         getDataFromRemote();
     }
 
     void addData() {
 // offline
-//        mahasiswaArrayList = new ArrayList<>();
-//        mahasiswaArrayList.add(new model("1","Dimas Maulana", "Kudus", "081222333444","HP"));
-//        mahasiswaArrayList.add(new model("2","Budi", "Jepara", "082333444555","Laptop"));
-//        mahasiswaArrayList.add(new model("3","Ani", "Pati", "083111222333","TV"));
-//
-//
-//        adapter = new MahasiswaAdapter(mahasiswaArrayList);
-//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(List.this);
-//        recyclerView.setLayoutManager(layoutManager);
-//        recyclerView.setAdapter(adapter);
+        mahasiswaArrayList = new ArrayList<>();
+        mahasiswaArrayList.add(new model("1","Dimas Maulana", "Kudus", "081222333444","HP"));
+        mahasiswaArrayList.add(new model("2","Budi", "Jepara", "082333444555","Laptop"));
+        mahasiswaArrayList.add(new model("3","Ani", "Pati", "083111222333","TV"));
+
+
+        adapter = new MahasiswaAdapter(mahasiswaArrayList, new MahasiswaAdapter.Callback() {
+            @Override
+            public void onClick(int position) {
+
+            }
+
+            @Override
+            public void test() {
+
+            }
+        });
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(List.this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
 
         //get data online
 
@@ -69,7 +79,7 @@ public class List extends AppCompatActivity {
     }
 
     private void getDataFromRemote() {
-        AndroidNetworking.get(BaseURL.url + "getdata.php")
+        AndroidNetworking.get(BaseURL.url + "viewdata.php")
                 .setTag("test")
                 .setPriority(Priority.LOW)
                 .build()
@@ -88,11 +98,11 @@ public class List extends AppCompatActivity {
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                                 model model = new model(
-                                        jsonObject.getString("id"),
-                                        jsonObject.getString("nama"),
-                                        jsonObject.getString("alamat"),
-                                        jsonObject.getString("No_hp"),
-                                        jsonObject.getString("pesanan")
+                                        jsonObject.getString("ID"),
+                                        jsonObject.getString("namaSiswa"),
+                                        jsonObject.getString("Alamat"),
+                                        jsonObject.getString("Kelas"),
+                                        jsonObject.getString("Jurusan")
                                 );
                                 mahasiswaArrayList.add(model);
                             }
@@ -125,6 +135,9 @@ public class List extends AppCompatActivity {
                     @Override
                     public void onError(ANError error) {
                         // handle error
+                        Log.d("errorku", "onError errorCode : " + error.getErrorCode());
+                        Log.d("errorku", "onError errorBody : " + error.getErrorBody());
+                        Log.d("errorku", "onError errorDetail : " + error.getErrorDetail());
                     }
                 });
     }
