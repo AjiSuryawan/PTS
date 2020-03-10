@@ -46,8 +46,8 @@ public class List extends AppCompatActivity {
                 startActivityForResult(myIntent, 23);
             }
         });
-       // addData();
-        getDataFromRemote();
+        addData();
+       // getDataFromRemote();
     }
 
     void addData() {

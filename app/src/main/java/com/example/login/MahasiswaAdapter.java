@@ -1,7 +1,10 @@
 package com.example.login;
 
 import android.content.Intent;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -15,7 +18,8 @@ import java.util.ArrayList;
 public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.MahasiswaViewHolder> {
     private ArrayList<model> dataList;
     private Callback callback;
-
+    View viewku;
+    int posku;
 
     interface Callback {
         void onClick(int position);
@@ -61,17 +65,19 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
         return (dataList != null) ? dataList.size() : 0;
     }
 
-    public class MahasiswaViewHolder extends RecyclerView.ViewHolder{
+    public class MahasiswaViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
         private TextView txtNama, txtNpm, txtNoHp, txtAlamat;
         CardView card;
 
         public MahasiswaViewHolder(View itemView) {
             super(itemView);
+            viewku=itemView;
             card = (CardView) itemView.findViewById(R.id.cardku);
             txtNama = (TextView) itemView.findViewById(R.id.txt_nama_mahasiswa);
             txtNpm = (TextView) itemView.findViewById(R.id.txt_npm_mahasiswa);
             txtNoHp = (TextView) itemView.findViewById(R.id.txt_nohp_mahasiswa);
             txtAlamat = (TextView) itemView.findViewById(R.id.txt_alamat);
+            itemView.setOnCreateContextMenuListener(this);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -80,6 +86,34 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
                 }
             });
         }
+
+        @Override
+        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+            MenuItem Edit = menu.add(Menu.NONE, 1, 1, "Edit");
+            MenuItem Delete = menu.add(Menu.NONE, 2, 2, "Delete");
+            posku=getAdapterPosition();
+            Edit.setOnMenuItemClickListener(onEditMenu);
+            Delete.setOnMenuItemClickListener(onEditMenu);
+        }
+
     }
+    private final MenuItem.OnMenuItemClickListener onEditMenu = new MenuItem.OnMenuItemClickListener() {
+        @Override
+        public boolean onMenuItemClick(MenuItem item) {
+
+            switch (item.getItemId()) {
+                case 1:
+                    //Do stuff
+                    Toast.makeText(viewku.getContext(), ""+posku, Toast.LENGTH_SHORT).show();
+                    break;
+
+                case 2:
+                    //Do stuff
+
+                    break;
+            }
+            return true;
+        }
+    };
 
 }
