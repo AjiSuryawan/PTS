@@ -44,6 +44,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
     <TextView
+        android:text="nama"
         android:layout_marginLeft="15dp"
         android:id="@+id/txt_nama_mahasiswa"
         android:layout_width="match_parent"
@@ -52,6 +53,7 @@
     <!-- TextView Npm Mahasiswa -->
 
     <TextView
+        android:text="makan"
         android:layout_marginLeft="15dp"
         android:id="@+id/txt_npm_mahasiswa"
         android:layout_width="match_parent"
@@ -60,11 +62,13 @@
     <!-- TextView NoHp Mahasiswa -->
 
     <TextView
+        android:text="id"
         android:layout_marginLeft="15dp"
         android:id="@+id/txt_nohp_mahasiswa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
+        android:text="minuman"
         android:layout_marginLeft="15dp"
         android:id="@+id/txt_alamat"
         android:layout_width="match_parent"

@@ -38,14 +38,14 @@ public class List extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         recyclerView = (RecyclerView) findViewById(R.id.list);
-        tambah_data = (findViewById(R.id.tambah_data));
-        tambah_data.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent (List.this, tambah_data.class);
-                startActivityForResult(myIntent, 23);
-            }
-        });
+//        tambah_data = (findViewById(R.id.tambah_data));
+//        tambah_data.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent myIntent = new Intent (List.this, tambah_data.class);
+//                startActivityForResult(myIntent, 23);
+//            }
+//        });
         addData();
        // getDataFromRemote();
     }
